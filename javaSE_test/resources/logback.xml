@@ -1,0 +1,28 @@
+<configuration scan="true" scanPeriod="10 seconds" debug="false">
+
+	<!-- 修改为当前目录 -->
+	<property name="LOG_DIR" value="./logs/" />
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%-5level][%d{HH:mm:ss.SSS}][%-30logger{0}%3L] %msg[%method][%t]%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE_DAY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_DIR}/quantexui-main.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%-5level][%d{HH:mm:ss.SSS}][%-30logger{0}%3L] %msg[%method][%t]%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="test" level="debug" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+	<root level="ERROR">
+	</root>
+</configuration>
