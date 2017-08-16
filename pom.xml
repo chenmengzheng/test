@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.test</groupId>
+    <artifactId>chen</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>test</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.7</maven.compiler.compilerVersion>
+    </properties>
+
+    <modules>
+        <module>apache_commons_test</module>
+        <module>book</module>
+        <module>http_test</module>
+        <module>io_test</module>
+        <module>javaSE_test</module>
+        <module>java_tool</module>
+        <module>java_util</module>
+        <module>redis_test</module>
+        <module>spring_boot_test</module>
+        <module>spring_test</module>
+        <module>zookeeper_book</module>
+        <module>zookeeper_test</module>
+    </modules>
+</project>
