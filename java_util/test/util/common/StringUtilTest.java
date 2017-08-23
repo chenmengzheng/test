@@ -3,48 +3,39 @@ package util.common;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
+import test.commons.BaseTest;
 
-import util.common.StringUtil;
+import static org.junit.Assert.*;
 
 @RunWith(MockitoJUnitRunner.class)
-public class StringUtilTest {
+public class StringUtilTest extends BaseTest{
 	
 	@Test
-	public void getString(){
-		System.out.println(StringUtil.getString("","meng"));
+	public void isNullDefault(){
+		print(StringUtil.isNullDefault(null,"abc"));
+		assertEquals(StringUtil.isNullDefault("a", "abc") , "a");
+		assertEquals(StringUtil.isNullDefault("", "abc") , "abc");
+		assertEquals(StringUtil.isNullDefault(null, "abc") , "abc");
+
 	}
-	
+
 	@Test
-	public void isEmpty(){
-		System.out.println(StringUtil.isEmpty("chen"));
+	public void isNullDefault2(){
+		assertEquals(StringUtil.isNullDefault("a"), "a");
+		assertEquals(StringUtil.isNullDefault(""), "");
+		assertEquals(StringUtil.isNullDefault(null), "");
 	}
-	
+
+
 	@Test
-	public void getLeft(){
-		System.out.println(StringUtil.getLeft("chehmenghzeng", 5));
+	public void test1(){
+		int period = 1 ;
+		if (period == 1 || period == 3) {
+			print("ok");
+		}
 	}
-	
-	@Test
-	public void getRight(){
-		System.out.println(StringUtil.getRight("chenmenghzeng", 3));
-	}
-	
-	@Test
-	public void test_indexOfAnyBut(){
-		System.out.println(StringUtil.indexOfAnyBut("aba", 'a','b'));
-	}
-	
-	@Test
-	public void test_substringBefore(){
-		System.out.println(StringUtil.substringAfter("abdcgdcef", "dcaa"));
-	}
-	
-	@Test
-	public void test_substringBetween(){
-		String[] str = StringUtil.substringsBetween("12c12c893d45d123c78d77", "c", "d");
-		System.out.println(str);
-		
-	}
-	
+
+
+
 	
 }
